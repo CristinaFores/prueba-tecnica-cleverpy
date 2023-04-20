@@ -17,10 +17,10 @@ const usePosts = () => {
     dispatch(showLoadingActionCreator());
     try {
       const { data } = await axios.get<Post[]>(`${urlApi}posts`);
-
-      dispatch(loadPostsActionCreator(data));
       dispatch(hiddenLoadingActionCreator());
+      dispatch(loadPostsActionCreator(data));
     } catch (error: unknown) {
+      dispatch(hiddenLoadingActionCreator());
       dispatch(
         showModalActionCreator({
           isError: true,
