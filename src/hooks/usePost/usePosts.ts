@@ -5,7 +5,10 @@ import {
   showLoadingActionCreator,
   showModalActionCreator,
 } from "../../redux/features/uiSlice/uiSlice";
-import { loadPostsActionCreator } from "../../redux/features/postSlice/postsSlice";
+import {
+  deletePostActionCreator,
+  loadPostsActionCreator,
+} from "../../redux/features/postSlice/postsSlice";
 import { useCallback } from "react";
 import { Post } from "../../redux/features/postSlice/types";
 
@@ -30,7 +33,18 @@ const usePosts = () => {
     }
   }, [dispatch]);
 
-  return { getPosts };
+  const deletePost = async (id: number) => {
+    await dispatch(deletePostActionCreator(id));
+
+    dispatch(
+      showModalActionCreator({
+        isError: false,
+        text: "La publicacion ha sido eliminada",
+      })
+    );
+  };
+
+  return { getPosts, deletePost };
 };
 
 export default usePosts;
