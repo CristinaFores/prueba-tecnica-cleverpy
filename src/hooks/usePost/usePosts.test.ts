@@ -48,5 +48,17 @@ describe("Given the usePosts custom hook", () => {
         })
       );
     });
+
+    describe("When it's function deletePost is invoked", () => {
+      test("Then it's should be called the dispatch", async () => {
+        const { result } = renderHook(() => usePosts(), {
+          wrapper: ProviderWrapper,
+        });
+
+        await result.current.deletePost(1);
+
+        expect(dispatchSpyON).toBeCalled();
+      });
+    });
   });
 });
