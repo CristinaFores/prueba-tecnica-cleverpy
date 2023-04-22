@@ -26,7 +26,7 @@ describe("Given a userReducer", () => {
   });
 
   describe("When it receives an logoutUser", () => {
-    test("should set user data", () => {
+    test("Then its should set user data", () => {
       const expectedState: UserState = {
         id: "",
         token: "",
