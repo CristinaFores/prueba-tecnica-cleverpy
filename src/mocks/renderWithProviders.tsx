@@ -11,6 +11,8 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../styles/GlobalStyle";
 import { UiState } from "../redux/features/uiSlice/types";
 import { PostsState } from "../redux/features/postSlice/types";
+import { UserState } from "../redux/features/userSlice/types";
+import { userReducer } from "../redux/features/userSlice/userSlice";
 
 export const mockUiModalShowState: UiState = {
   isLoading: false,
@@ -25,14 +27,22 @@ export const initialPostState: PostsState = {
   posts: [],
 };
 
+const initialUserState: UserState = {
+  id: "",
+  token: "",
+  username: "",
+  isLogged: false,
+};
 export const mockStoreModalShow: typeof store = configureStore({
   reducer: {
     ui: uiReducer,
     posts: postsReducer,
+    user: userReducer,
   },
   preloadedState: {
     ui: mockUiModalShowState,
     posts: initialPostState,
+    user: initialUserState,
   },
 });
 
@@ -49,6 +59,7 @@ export const renderWithProviders = (
       reducer: {
         posts: postsReducer,
         ui: uiReducer,
+        user: userReducer,
       },
       preloadedState,
     }),
