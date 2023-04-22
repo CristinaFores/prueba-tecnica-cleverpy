@@ -22,7 +22,7 @@ const Modal = (): JSX.Element => {
 
   return (
     <ModalStyled>
-      <p>{text}</p>
+      <p aria-label="Text modal">{text}</p>
     </ModalStyled>
   );
 };
