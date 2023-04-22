@@ -6,6 +6,7 @@ interface ButtonProps {
   disabled?: boolean;
   ariaLabel: string;
   onSubmit?: React.FormEventHandler<HTMLButtonElement>;
+  type?: "button" | "submit" | "reset" | undefined;
 }
 
 const Button = ({
@@ -14,6 +15,7 @@ const Button = ({
   ariaLabel,
   onSubmit,
   disabled,
+  type,
 }: ButtonProps): JSX.Element => {
   return (
     <>
@@ -22,6 +24,7 @@ const Button = ({
         aria-label={ariaLabel}
         disabled={disabled}
         onSubmit={onSubmit}
+        type={type}
       >
         {text}
       </ButtonStyled>

@@ -9,7 +9,12 @@ describe("Given component Button", () => {
       const buttonAction = jest.fn();
 
       renderWithProviders(
-        <Button text="Delete" ariaLabel={"Delete"} action={buttonAction} />
+        <Button
+          text="Delete"
+          ariaLabel={"Delete"}
+          action={buttonAction}
+          type={undefined}
+        />
       );
 
       const expectedButton = screen.queryByRole("button", {
