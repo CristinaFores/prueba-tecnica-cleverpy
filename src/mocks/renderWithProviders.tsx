@@ -9,6 +9,32 @@ import { Provider } from "react-redux";
 import theme from "../styles/theme";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../styles/GlobalStyle";
+import { UiState } from "../redux/features/uiSlice/types";
+import { PostsState } from "../redux/features/postSlice/types";
+
+export const mockUiModalShowState: UiState = {
+  isLoading: false,
+  modal: {
+    isError: true,
+    showModal: true,
+    text: "Post deleted",
+  },
+};
+
+export const initialPostState: PostsState = {
+  posts: [],
+};
+
+export const mockStoreModalShow: typeof store = configureStore({
+  reducer: {
+    ui: uiReducer,
+    posts: postsReducer,
+  },
+  preloadedState: {
+    ui: mockUiModalShowState,
+    posts: initialPostState,
+  },
+});
 
 export interface ExtendedRenderOptions extends RenderOptions {
   preloadedState?: PreloadedState<RootState>;
