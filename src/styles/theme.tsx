@@ -5,6 +5,7 @@ const theme: DefaultTheme = {
     primary: "#ffffff",
     secondary: "#000000",
     tertiary: "#9abaff",
+    quaternary: "#020233",
   },
 };
 
