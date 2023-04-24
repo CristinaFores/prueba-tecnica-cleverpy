@@ -24,7 +24,14 @@ export const mockUiModalShowState: UiState = {
 };
 
 export const initialPostState: PostsState = {
-  posts: [],
+  posts: [
+    {
+      id: 1,
+      title: "Post 1",
+      body: "Body 1",
+      userId: 1,
+    },
+  ],
 };
 
 const initialUserState: UserState = {
