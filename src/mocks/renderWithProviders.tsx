@@ -38,7 +38,7 @@ const initialUserState: UserState = {
   id: "",
   token: "",
   username: "",
-  isLogged: true,
+  isLogged: false,
 };
 
 export const mockStoreModalShow: typeof store = configureStore({
@@ -85,5 +85,5 @@ export const renderWithProviders = (
       </>
     );
   };
-  return render(ui, { wrapper: Wrapper });
+  return { store, ...render(ui, { wrapper: Wrapper }) };
 };
