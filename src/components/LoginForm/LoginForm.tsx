@@ -2,10 +2,11 @@ import { useState } from "react";
 import useUser from "../../hooks/useUser/useUser";
 import LoginFormStyled from "./LoginFormStyled";
 import Button from "../Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = (): JSX.Element => {
   const { loginUser } = useUser();
-
+  const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
     username: "",
     password: "",
@@ -18,6 +19,7 @@ const LoginForm = (): JSX.Element => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     await loginUser(loginData!);
+    navigate("/home");
   };
 
   return (

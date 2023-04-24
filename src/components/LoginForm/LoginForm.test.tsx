@@ -1,11 +1,11 @@
-import { renderWithProviders } from "../../mocks/renderWithProviders";
 import LoginForm from "./LoginForm";
 import { screen } from "@testing-library/react";
+import { renderRouterWithProviders } from "../../mocks/renderRouterWithProviders";
 
 describe("Given component LoginForm", () => {
   describe("When it render", () => {
     test("Then its should show form with input and button", () => {
-      renderWithProviders(<LoginForm />);
+      renderRouterWithProviders(<LoginForm />);
 
       const expectInputUser = screen.getByRole("textbox", { name: /Usuario/i });
 

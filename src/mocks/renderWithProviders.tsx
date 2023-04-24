@@ -31,8 +31,9 @@ const initialUserState: UserState = {
   id: "",
   token: "",
   username: "",
-  isLogged: false,
+  isLogged: true,
 };
+
 export const mockStoreModalShow: typeof store = configureStore({
   reducer: {
     ui: uiReducer,
@@ -63,7 +64,6 @@ export const renderWithProviders = (
       },
       preloadedState,
     }),
-    ...renderOptions
   }: ExtendedRenderOptions = {}
 ) => {
   const Wrapper = ({ children }: PropsWithChildren<{}>): JSX.Element => {
@@ -78,5 +78,5 @@ export const renderWithProviders = (
       </>
     );
   };
-  return { store, ...render(ui, { wrapper: Wrapper }) };
+  return render(ui, { wrapper: Wrapper });
 };
