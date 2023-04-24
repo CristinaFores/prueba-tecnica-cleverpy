@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 
-body {
+body, h1, h2, h3, ul, li, p, span {
   margin: 0;
 }
 
