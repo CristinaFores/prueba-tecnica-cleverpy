@@ -1,15 +1,15 @@
 import App from "../components/App/App";
-import LoginForm from "../components/LoginForm/LoginForm";
-import ListPosts from "../components/ListPosts/ListPosts";
 import { RouteObject, createBrowserRouter } from "react-router-dom";
+import LoginPage from "../pages/LoginPage/LoginPage";
+import HomePage from "../pages/HomePage/HomePage";
 
 const routes: RouteObject[] = [
   {
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <LoginForm /> },
-      { path: "/home", element: <ListPosts /> },
+      { path: "/", element: <LoginPage /> },
+      { path: "/home", element: <HomePage /> },
     ],
   },
 ];
