@@ -24,14 +24,21 @@ export const mockUiModalShowState: UiState = {
 };
 
 export const initialPostState: PostsState = {
-  posts: [],
+  posts: [
+    {
+      id: 1,
+      title: "Post 1",
+      body: "Body 1",
+      userId: 1,
+    },
+  ],
 };
 
 const initialUserState: UserState = {
   id: "",
   token: "",
   username: "",
-  isLogged: true,
+  isLogged: false,
 };
 
 export const mockStoreModalShow: typeof store = configureStore({
@@ -78,5 +85,5 @@ export const renderWithProviders = (
       </>
     );
   };
-  return render(ui, { wrapper: Wrapper });
+  return { store, ...render(ui, { wrapper: Wrapper }) };
 };
