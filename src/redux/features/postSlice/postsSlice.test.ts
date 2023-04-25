@@ -9,6 +9,12 @@ describe("Given a postsReducer", () => {
     test("Then it should return a new state the posts", () => {
       const initialState = {
         posts: [],
+        post: {
+          userId: 0,
+          id: 0,
+          title: "",
+          body: "",
+        },
       };
       const posts = [
         {
@@ -48,6 +54,13 @@ describe("Given a postsReducer", () => {
             body: "body 2",
           },
         ],
+
+        post: {
+          userId: 0,
+          id: 0,
+          title: "",
+          body: "",
+        },
       };
 
       const expectecPosts = {
@@ -59,6 +72,12 @@ describe("Given a postsReducer", () => {
             body: "body 2",
           },
         ],
+        post: {
+          userId: 0,
+          id: 0,
+          title: "",
+          body: "",
+        },
       };
 
       const action = deletePostActionCreator(1);

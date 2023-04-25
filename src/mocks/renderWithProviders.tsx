@@ -32,6 +32,12 @@ export const initialPostState: PostsState = {
       userId: 1,
     },
   ],
+  post: {
+    id: 1,
+    title: "Post 1",
+    body: "Body 1",
+    userId: 1,
+  },
 };
 
 const initialUserState: UserState = {
