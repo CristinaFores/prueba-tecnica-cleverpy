@@ -41,6 +41,9 @@ select {
   cursor: pointer;  
   background-color: transparent;
   font: inherit;
+  color: inherit;
+  text-transform: inherit;
+
 }
 
 p,

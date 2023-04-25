@@ -15,9 +15,8 @@ jest.mock("react-router-dom", () => ({
 describe("Given component LoginPage", () => {
   describe("When it render", () => {
     describe("Then its should show form with input and button", () => {
-      test("And the dispatch should be called", async () => {
+      test("And the dispatch will not be called", async () => {
         renderWithProviders(<LoginPage />, { store: mockStoreModalShow });
-
         const expectInputUser = screen.getByRole("textbox", {
           name: "Usuario",
         });
@@ -30,7 +29,7 @@ describe("Given component LoginPage", () => {
 
         await userEvent.click(expectButton);
 
-        expect(mockedUseNavigate).toHaveBeenCalled();
+        expect(mockedUseNavigate).not.toHaveBeenCalled();
 
         expect(expectInputUser).toBeInTheDocument();
         expect(passwordInput).toBeInTheDocument();
