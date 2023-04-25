@@ -2,6 +2,7 @@ import {
   deletePostActionCreator,
   loadPostsActionCreator,
   postsReducer,
+  updatePostActionCreator,
 } from "./postsSlice";
 
 describe("Given a postsReducer", () => {
@@ -9,6 +10,12 @@ describe("Given a postsReducer", () => {
     test("Then it should return a new state the posts", () => {
       const initialState = {
         posts: [],
+        post: {
+          userId: 0,
+          id: 0,
+          title: "",
+          body: "",
+        },
       };
       const posts = [
         {
@@ -48,6 +55,13 @@ describe("Given a postsReducer", () => {
             body: "body 2",
           },
         ],
+
+        post: {
+          userId: 0,
+          id: 0,
+          title: "",
+          body: "",
+        },
       };
 
       const expectecPosts = {
@@ -59,9 +73,64 @@ describe("Given a postsReducer", () => {
             body: "body 2",
           },
         ],
+        post: {
+          userId: 0,
+          id: 0,
+          title: "",
+          body: "",
+        },
       };
 
       const action = deletePostActionCreator(1);
+      const newState = postsReducer(initialState, action);
+
+      expect(expectecPosts).toStrictEqual(newState);
+    });
+  });
+
+  describe("When it recieves initial state and action'updatePost'", () => {
+    test("Then it should return a new state with the post with id 1 updated", () => {
+      const initialState = {
+        posts: [
+          {
+            userId: 1,
+            id: 1,
+            title: "title 1",
+            body: "body 1",
+          },
+        ],
+
+        post: {
+          userId: 0,
+          id: 0,
+          title: "",
+          body: "",
+        },
+      };
+
+      const expectecPosts = {
+        posts: [
+          {
+            userId: 1,
+            id: 1,
+            title: "title 1 updated",
+            body: "body 1 updated",
+          },
+        ],
+        post: {
+          userId: 0,
+          id: 0,
+          title: "",
+          body: "",
+        },
+      };
+
+      const action = updatePostActionCreator({
+        userId: 1,
+        id: 1,
+        title: "title 1 updated",
+        body: "body 1 updated",
+      });
       const newState = postsReducer(initialState, action);
 
       expect(expectecPosts).toStrictEqual(newState);
