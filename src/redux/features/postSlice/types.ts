@@ -7,4 +7,5 @@ export interface Post {
 
 export interface PostsState {
   posts: Post[];
+  post: Post;
 }
