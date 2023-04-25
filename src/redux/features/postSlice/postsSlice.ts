@@ -46,4 +46,5 @@ export const postsReducer = postsSlice.reducer;
 export const {
   loadPosts: loadPostsActionCreator,
   deletePost: deletePostActionCreator,
+  updatePost: updatePostActionCreator,
 } = postsSlice.actions;
