@@ -1,20 +1,35 @@
 import styled from "styled-components";
 
-const ButtonStyled = styled.button`
-  background-color: ${({ theme }) => theme.colors.tertiary};
+const ButtonStyled = styled.div`
   width: 100%;
-  padding: 8px 12px;
-  border-radius: 5px;
-  color: ${({ theme }) => theme.colors.primary};
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  border: 3px solid ${({ theme }) => theme.colors.tertiary};
+  display: flex;
 
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.tertiary};
+  button,
+  a {
+    background-color: ${({ theme }) => theme.colors.tertiary};
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: ${({ theme }) => theme.colors.primary};
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
     border: 3px solid ${({ theme }) => theme.colors.tertiary};
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.tertiary};
+      border: 3px solid ${({ theme }) => theme.colors.tertiary};
+    }
+
+    &:disabled {
+      background-color: ${({ theme }) => theme.colors.quaternary};
+      border: 3px solid ${({ theme }) => theme.colors.quaternary};
+      color: ${({ theme }) => theme.colors.primary};
+      cursor: not-allowed;
+    }
   }
 `;
 
