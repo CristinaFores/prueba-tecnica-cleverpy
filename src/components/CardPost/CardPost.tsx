@@ -18,8 +18,10 @@ const CardPost = ({ body, title, id }: PostCardProps): JSX.Element => {
 
   return (
     <CardPostStyled key={id}>
-      <h2>{title}</h2>
-      <p>{body}</p>
+      <h2>{title.charAt(0).toUpperCase() + title.slice(1)}</h2>
+
+      {}
+      <p>{body.charAt(0).toUpperCase() + body.slice(1)}</p>
       <Button
         text="Delete"
         action={() => handleDelete(id!)}

@@ -9,7 +9,6 @@ const ListPostsStyled = styled.div`
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 1.5rem;
-    margin-top: 3rem;
   }
 `;
 

@@ -10,6 +10,10 @@ const HeaderStyled = styled.div`
   h1 {
     font-weight: 500;
   }
+
+  svg {
+    cursor: pointer;
+  }
 `;
 
 export default HeaderStyled;
