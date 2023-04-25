@@ -21,6 +21,9 @@ const LoginForm = (): JSX.Element => {
     await loginUser(loginData!);
     navigate("/home");
   };
+  const isFormEmpty = () => {
+    return Object.values(loginData).some((data) => data === "");
+  };
 
   return (
     <LoginFormStyled onSubmit={handleSubmit}>
@@ -42,7 +45,13 @@ const LoginForm = (): JSX.Element => {
           onChange={handleChange}
         />
       </label>
-      <Button ariaLabel={"Entrar"} text="Entrar" type="submit" />
+      <Button
+        ariaLabel={"Entrar"}
+        text="Entrar"
+        type="submit"
+        disabled={isFormEmpty()}
+        linkActive={false}
+      />
     </LoginFormStyled>
   );
 };
