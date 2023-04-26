@@ -3,6 +3,7 @@ import useUser from "../../hooks/useUser/useUser";
 import LoginFormStyled from "./LoginFormStyled";
 import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
+import Input from "../Input/Input";
 
 const LoginForm = (): JSX.Element => {
   const { loginUser } = useUser();
@@ -27,24 +28,27 @@ const LoginForm = (): JSX.Element => {
 
   return (
     <LoginFormStyled onSubmit={handleSubmit}>
-      <label>
-        Usuario
-        <input
-          type="text"
-          id="username"
-          autoComplete="off"
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Contraseña
-        <input
-          type="password"
-          id="password"
-          autoComplete="off"
-          onChange={handleChange}
-        />
-      </label>
+      <Input
+        type="text"
+        placeholder="Nombre"
+        htmlFor="username"
+        textLabel="Usuario*"
+        onChange={handleChange}
+        id="username"
+        textArea={false}
+      />
+
+      <Input
+        textLabel="Contraseña*"
+        id="password"
+        type={"password"}
+        placeholder="Contraseña"
+        htmlFor={"password"}
+        textArea={false}
+        autoComplete="off"
+        onChange={handleChange}
+      />
+
       <Button
         ariaLabel={"Entrar"}
         text="Entrar"
