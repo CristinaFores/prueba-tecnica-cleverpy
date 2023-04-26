@@ -7,7 +7,9 @@ describe("Given component LoginForm", () => {
     test("Then its should show form with input and button", () => {
       renderRouterWithProviders(<LoginForm />);
 
-      const expectInputUser = screen.getByRole("textbox", { name: /Usuario/i });
+      const expectInputUser = screen.getByRole("textbox", {
+        name: /Usuario*/i,
+      });
 
       const expectButton = screen.getByRole("button", { name: /Entrar/i });
 
