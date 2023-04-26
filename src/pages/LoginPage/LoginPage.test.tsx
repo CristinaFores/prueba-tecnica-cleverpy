@@ -18,10 +18,10 @@ describe("Given component LoginPage", () => {
       test("And the dispatch will not be called", async () => {
         renderWithProviders(<LoginPage />, { store: mockStoreModalShow });
         const expectInputUser = screen.getByRole("textbox", {
-          name: "Usuario",
+          name: "Usuario*",
         });
 
-        const passwordInput = screen.queryByLabelText("Contraseña")!;
+        const passwordInput = screen.queryByLabelText("Contraseña*")!;
 
         const expectButton = screen.getByRole("button", {
           name: /Entrar/i,
