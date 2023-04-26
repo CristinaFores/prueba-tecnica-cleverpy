@@ -10,6 +10,11 @@ import {
 
 const dispatchSpyON = jest.spyOn(store, "dispatch");
 
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => jest.fn(),
+}));
+
 describe("Given the usePosts custom hook", () => {
   describe("When it's function getPosts is invoked", () => {
     test("Then it's should dispatch", async () => {

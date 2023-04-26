@@ -7,6 +7,11 @@ import { showModalActionCreator } from "../../redux/features/uiSlice/uiSlice";
 
 const dispatchSpyON = jest.spyOn(store, "dispatch");
 
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => jest.fn(),
+}));
+
 describe("Given a useUser custom hook", () => {
   describe("When it's function loginUser is invoked with userData, correct credencials", () => {
     test("Then it's should be called the dispatch with loginUserActionCreator and showModalActionCreator", async () => {
