@@ -56,8 +56,11 @@ npm run cypress:open
 
 # 🎞️ Video Cypress
 
+<div align="center" >
+
 [![nombre-descriptivo](https://img.youtube.com/vi/6HEEULa6qdo/hqdefault.jpg)](https://youtu.be/6HEEULa6qdo)
 
+</div>
 <br/>
 
 # 💻 Stack
