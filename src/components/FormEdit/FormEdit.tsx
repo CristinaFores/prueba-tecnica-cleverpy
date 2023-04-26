@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import Button from "../Button/Button";
 import Input from "../Input/Input";
@@ -11,9 +11,9 @@ const FormEdit = () => {
   const { updatePost } = usePosts();
   const { posts } = useAppSelector((state) => state.posts);
   const { id } = useParams();
-  const navigate = useNavigate();
 
-  const [data, setData] = useState(posts[+id! - 1] || []);
+  const initialPost = posts.find((post) => post.id === +id!);
+  const [data, setData] = useState(initialPost!);
 
   const onChange = (
     event:
@@ -32,17 +32,13 @@ const FormEdit = () => {
 
     formPostToSubmit.append("title", data.title);
     formPostToSubmit.append("body", data.body);
+
     const newPost = {
       ...data,
       formPostToSubmit,
     };
 
     await updatePost(id, newPost);
-    navigate("/home");
-  };
-
-  const isFormEmpty = () => {
-    return Object.values(data).some((dataEdit) => dataEdit === "");
   };
 
   return (
@@ -71,7 +67,7 @@ const FormEdit = () => {
           text="Update"
           type="submit"
           linkActive={false}
-          disabled={isFormEmpty()}
+          disabled={false}
         />
       </form>
     </FormEditStyled>

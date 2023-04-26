@@ -24,13 +24,9 @@ const Button = ({
   linkActive,
   patch,
 }: ButtonProps): JSX.Element => {
-  const handleClick = (patch: string) => {
-    window.location.href = patch;
-  };
-
   return (
     <>
-      <ButtonStyled onClick={() => linkActive && handleClick(patch!)}>
+      <ButtonStyled>
         {linkActive ? (
           <Link to={patch!}>
             {text} {image}

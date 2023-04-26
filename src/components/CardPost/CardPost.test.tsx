@@ -1,8 +1,8 @@
 import { screen } from "@testing-library/react";
 import CardPost from "./CardPost";
-import { renderWithProviders } from "../../mocks/renderWithProviders";
 import userEvent from "@testing-library/user-event";
 import { deletePostActionCreator } from "../../redux/features/postSlice/postsSlice";
+import { renderRouterWithProviders } from "../../mocks/renderRouterWithProviders";
 
 const mockDispatch = jest.fn();
 jest.mock("react-redux", () => ({
@@ -13,7 +13,7 @@ jest.mock("react-redux", () => ({
 describe("Given component CardPost", () => {
   describe("When it render", () => {
     test("Then its should show card with title:'Cristina and body 'text body'", () => {
-      renderWithProviders(
+      renderRouterWithProviders(
         <CardPost title="Cristina" body="text body" id={1} />
       );
 
@@ -28,11 +28,14 @@ describe("Given component CardPost", () => {
   });
 
   test("Then it should  call dispatch with action: deletePost, when the user click on the delete button", async () => {
-    renderWithProviders(<CardPost title="Cristina" body="text body" id={1} />);
+    renderRouterWithProviders(
+      <CardPost title="Cristina" body="text body" id={1} />
+    );
 
     const button = screen.getByRole("button", { name: /Delete/i });
     await userEvent.click(button);
 
+    expect(button).toBeInTheDocument();
     expect(mockDispatch).toHaveBeenCalledWith(deletePostActionCreator(1));
   });
 });
