@@ -56,7 +56,7 @@ npm run cypress:open
 
 # 🎞️ Video Cypress
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6HEEULa6qdo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![nombre-descriptivo](https://img.youtube.com/vi/6HEEULa6qdo/hqdefault.jpg)](https://youtu.be/6HEEULa6qdo)
 
 <br/>
 
