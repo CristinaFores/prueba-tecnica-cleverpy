@@ -1,10 +1,9 @@
-.
-
 # 📑 Cleverpy App
 
-> Web application represent the returned posts
+<br/>
+> Web application able to list, delete and update posts
 
- </br>
+</br>
 
 # 💫Getting Started
 
@@ -45,17 +44,19 @@ npm run cypress:open
 
 # 🎨Screenshots
 
+<br/>
 <div align="center" >
 
 <img  src="./src/assets/mobile.png" alt="App Image" width='120px' > 
   &nbsp  &nbsp &nbsp  &nbsp
- <img  src="./src/assets/pc.png" alt="App Image" width='310px' >
+<img  src="./src/assets/pc.png" alt="App Image" width='310px' >
 </div>
 
 <br/>
 
 # 🎞️ Video Cypress
 
+<br/>
 <div align="center" >
 
 [![nombre-descriptivo](https://img.youtube.com/vi/6HEEULa6qdo/hqdefault.jpg)](https://youtu.be/6HEEULa6qdo)
