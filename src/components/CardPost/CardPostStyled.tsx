@@ -15,3 +15,8 @@ export const CardPostStyled = styled.div`
     margin-bottom: 0.8rem;
   }
 `;
+
+export const ContainerStyled = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
