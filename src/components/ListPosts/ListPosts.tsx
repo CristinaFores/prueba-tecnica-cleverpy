@@ -1,17 +1,12 @@
-import { useEffect } from "react";
-import usePosts from "../../hooks/usePost/usePosts";
-import { useAppSelector } from "../../redux/hooks";
 import CardPost from "../CardPost/CardPost";
 import ListPostsStyled from "./ListPostsStyled";
+import { Post } from "../../redux/features/postSlice/types";
 
-const ListPosts = (): JSX.Element => {
-  const { posts } = useAppSelector((state) => state.posts);
-  const { getPosts } = usePosts();
+interface ListPostsProps {
+  posts: Post[];
+}
 
-  useEffect(() => {
-    getPosts();
-  }, [getPosts]);
-
+const ListPosts = ({ posts }: ListPostsProps): JSX.Element => {
   return (
     <ListPostsStyled>
       <ul>
