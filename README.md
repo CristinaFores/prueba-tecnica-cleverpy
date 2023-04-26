@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+# 📑 Cleverpy App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+<br/>
+> Web application able to list, delete and update posts
 
-## Available Scripts
+</br>
 
-In the project directory, you can run:
+# 💫Getting Started
 
-### `npm start`
+**Install NPM packages**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+npm install
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Run the project**
 
-### `npm test`
+```sh
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Then will open [http://localhost:3000](http://localhost:3000)
 
-### `npm run build`
+<br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Login Credentials **
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+- Usuario: admin
+- Contraseña: admin
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br/>
 
-### `npm run eject`
+**Run the test**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+npm test
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm run cypress:open
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br/>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# 🎨Screenshots
 
-## Learn More
+<br/>
+<div align="center" >
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img  src="./src/assets/mobile.png" alt="App Image" width='120px' > 
+  &nbsp  &nbsp &nbsp  &nbsp
+<img  src="./src/assets/pc.png" alt="App Image" width='310px' >
+</div>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br/>
+
+# 🎞️ Video Cypress
+
+<br/>
+<div align="center" >
+
+[![nombre-descriptivo](https://img.youtube.com/vi/6HEEULa6qdo/hqdefault.jpg)](https://youtu.be/6HEEULa6qdo)
+
+</div>
+<br/>
+
+# 💻 Stack
+
+- [React.js](https://nextjs.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [TypeScript](typescriptlang.org)
+- [Styled-Components](https://styled-components.com/)
+- [Jest](https://jestjs.io/)
+- [Testing-Library](https://testing-library.com/)
+- [Cypress](https://www.cypress.io/)

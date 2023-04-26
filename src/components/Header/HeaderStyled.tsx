@@ -8,6 +8,8 @@ const HeaderStyled = styled.header`
   justify-content: space-between;
   padding: 20px;
   margin-bottom: 20px;
+  gap: 1rem;
+  text-align: center;
   h1 {
     font-weight: 500;
   }
@@ -19,6 +21,8 @@ const HeaderStyled = styled.header`
 
   svg {
     cursor: pointer;
+    width: 50px;
+    height: 50px;
   }
 `;
 
