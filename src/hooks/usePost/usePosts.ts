@@ -44,7 +44,29 @@ const usePosts = () => {
     );
   };
 
-  return { getPosts, deletePost };
+  const updatePost = useCallback(
+    async (id: number, post: Post) => {
+      try {
+        const data = await axios.patch(`${urlApi}posts/${id}`, post, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        dispatch(deletePostActionCreator(data.data));
+      } catch (error: unknown) {
+        dispatch(
+          showModalActionCreator({
+            isError: true,
+            text: "No se pudo actualizar el post",
+          })
+        );
+      }
+    },
+    [dispatch]
+  );
+
+  return { getPosts, deletePost, updatePost };
 };
 
 export default usePosts;
