@@ -8,13 +8,16 @@ import {
 import {
   deletePostActionCreator,
   loadPostsActionCreator,
+  updatePostActionCreator,
 } from "../../redux/features/postSlice/postsSlice";
 import { useCallback } from "react";
 import { Post } from "../../redux/features/postSlice/types";
+import { useNavigate } from "react-router-dom";
 
 const usePosts = () => {
   const dispatch = useAppDispatch();
   const urlApi = "https://jsonplaceholder.typicode.com/";
+  const navigate = useNavigate();
 
   const getPosts = useCallback(async () => {
     dispatch(showLoadingActionCreator());
@@ -53,7 +56,14 @@ const usePosts = () => {
           },
         });
 
-        dispatch(deletePostActionCreator(data.data));
+        dispatch(updatePostActionCreator(data.data));
+        dispatch(
+          showModalActionCreator({
+            isError: false,
+            text: "La publicacion ha sido actualizada",
+          })
+        );
+        navigate("/homeposts");
       } catch (error: unknown) {
         dispatch(
           showModalActionCreator({
@@ -63,7 +73,7 @@ const usePosts = () => {
         );
       }
     },
-    [dispatch]
+    [dispatch, navigate]
   );
 
   return { getPosts, deletePost, updatePost };
