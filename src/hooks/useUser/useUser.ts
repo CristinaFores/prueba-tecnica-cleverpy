@@ -1,10 +1,17 @@
 import { useDispatch } from "react-redux";
 import { UserCredentialas } from "./types";
-import { loginUserActionCreator } from "../../redux/features/userSlice/userSlice";
+import {
+  loginUserActionCreator,
+  logoutUserActionCreator,
+} from "../../redux/features/userSlice/userSlice";
 import { showModalActionCreator } from "../../redux/features/uiSlice/uiSlice";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
 const useUser = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const loginUser = async (user: UserCredentialas) => {
     const token = "123456789";
 
@@ -36,7 +43,28 @@ const useUser = () => {
     localStorage.removeItem("token");
   };
 
-  return { loginUser };
+  const getToken = useCallback(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      dispatch(
+        loginUserActionCreator({
+          id: "1",
+          token,
+          username: "admin",
+        })
+      );
+    } else {
+      navigate("/");
+    }
+  }, [dispatch, navigate]);
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    dispatch(logoutUserActionCreator());
+    navigate("/");
+  };
+
+  return { loginUser, getToken, logout };
 };
 
 export default useUser;
