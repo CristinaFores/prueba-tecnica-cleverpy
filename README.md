@@ -23,7 +23,7 @@ npm start
 
 <br/>
 
-**Login Credentials **
+**Login Credentials**
 
 ```sh
 - Usuario: admin
