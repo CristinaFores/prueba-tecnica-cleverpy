@@ -16,7 +16,7 @@ describe("Given component HomePage", () => {
 
         const expectList = screen.getByRole("list");
         const expectButton = screen.getByRole("button", {
-          name: /Delete post/i,
+          name: /Borrar post/i,
         });
         const expectHeading = screen.getByRole("heading", {
           name: /Post 1/i,
