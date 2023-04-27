@@ -25,13 +25,13 @@ const CardPost = ({ body, title, id }: PostCardProps): JSX.Element => {
         <Button
           linkActive={true}
           patch={`/edit/${id}`}
-          text="Edit"
+          text="Actualizar"
           ariaLabel={"Edit post"}
         />
         <Button
-          text="Delete"
+          text="Borrar"
           action={() => handleDelete(id!)}
-          ariaLabel={"Delete post"}
+          ariaLabel={"Borrar post"}
           linkActive={false}
           disabled={false}
         />

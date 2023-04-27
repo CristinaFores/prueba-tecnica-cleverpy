@@ -12,7 +12,7 @@ describe("Given component FormEdit", () => {
       const expectInputText = screen.getAllByRole("textbox");
 
       const expectButton = screen.getByRole("button", {
-        name: /Update/i,
+        name: /Actualizar/i,
       });
 
       expect(expectInputTitle[0]).toBeInTheDocument();

@@ -32,7 +32,7 @@ describe("Given component CardPost", () => {
       <CardPost title="Cristina" body="text body" id={1} />
     );
 
-    const button = screen.getByRole("button", { name: /Delete/i });
+    const button = screen.getByLabelText("Borrar post", { selector: "button" });
     await userEvent.click(button);
 
     expect(button).toBeInTheDocument();

@@ -46,7 +46,7 @@ const FormEdit = () => {
       <form onSubmit={(event) => handleUpdate(event, +id!)}>
         <Input
           type={"text"}
-          placeholder={"Write your title here"}
+          placeholder={"Escribe tu título aquí"}
           htmlFor={"Title"}
           textLabel={"Title"}
           id={"title"}
@@ -55,7 +55,7 @@ const FormEdit = () => {
         />
         <Input
           type={"text"}
-          placeholder={"Write your text here"}
+          placeholder={"Escribe tu texto aquí"}
           htmlFor={"body"}
           textLabel={"Text"}
           id={"body"}
@@ -63,8 +63,8 @@ const FormEdit = () => {
           textArea={true}
         />
         <Button
-          ariaLabel={"Update"}
-          text="Update"
+          ariaLabel={"Actualizar"}
+          text="Actualizar"
           type="submit"
           linkActive={false}
           disabled={false}
