@@ -12,8 +12,7 @@ export const InputLabelStyled = styled.label`
     border: none;
     font-weight: 400;
     font-size: 1rem;
-    width: 100%;
-    padding: 8px 0;
+    padding: 8px;
     border: 1px solid ${(props) => props.theme.colors.secondary};
     border-radius: 5px;
 
@@ -26,5 +25,9 @@ export const InputLabelStyled = styled.label`
 
   textarea {
     min-height: 100px;
+  }
+
+  ::placeholder {
+    padding: 10px;
   }
 `;
